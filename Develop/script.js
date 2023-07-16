@@ -1,12 +1,10 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var enter;
-var number;
-var upperCase;
-var lowerCase;
-var character;
-//  b. Lowercase, uppercase, special characters, numbers
+function generatePassword() {
+  console.log("Button Clicked");
+
+var password = "";
 
 var numberArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -28,14 +26,12 @@ var combine= [];
 
 
 //Function to generate password
-function generatePassword() {
-  console.log("Button Clicked");
 
 
   //1. Prompt the user for the password criteria.
   //  a. Password length 8 < 128
 
-  enter = parseInt(prompt("How many characters would you like your password? Choose between 8 and 128."));
+var enter = parseInt(prompt("How many characters would you like your password? Choose between 8 and 128."));
 
   if (!enter) {
     alert ("Please enter a value");
@@ -43,25 +39,94 @@ function generatePassword() {
   else if (enter < 8 || enter > 128) {
     enter = parseInt(prompt("You must choose a number between 8 and 128"));
   }
+
   else {
-    number = confirm ("Click OK to include numbers.");
-    upperCase = confirm ("Click OK to include Uppercase letters.");
-    lowerCase = confirm("Click OK to include Lowercase letters.");
-    character= confirm("Click OK to include special characters.");
-  };
+  var number = confirm ("Click OK to include numbers.");
+  var upperCase = confirm ("Click OK to include Uppercase letters.");
+  var lowerCase = confirm("Click OK to include Lowercase letters.");
+  var character= confirm("Click OK to include special characters.");
+  }
+
+  if (number == true) {
+  for (var i = 0; i < enter; i++) 
+    console.log(numberArr[(Math.floor(Math.random() * numberArr.length))]);
+    console.log(lowerCaseArr[(Math.floor(Math.random() * lowerCaseArr.length))]);
+    console.log(upperCaseArr[(Math.floor(Math.random() * upperCaseArr.length))]);
+    console.log(characterArr[(Math.floor(Math.random() * characterArr.length))]);
+    // password.push(combine);
+  }
 
   if (!number && !upperCase && !lowerCase && !character) {
      alert("You must choose a criteria!");
   }
 
   else if (number && upperCase && lowerCase && character) {
+    for (var i = 0; i < length; i++){
     combine = combine.concat(numberArr, characterArr, lowerCaseArr, upperCaseArr);
+    var com2 = Math.floor(Math.random() * combine.length);
+    password += com2.toString();}
   }
 
   else if (number && upperCase && lowerCase){
-    combine = combine.concat(lowerCase + upperCase);
+    combine = combine.concat(numberArr, lowerCaseArr + upperCaseArr);
   }
 
+  else if (number && character && lowerCase){
+    combine = combine.concat(numberArr, characterArr, lowerCaseArr);
+  }
+
+  else if (number && character && upperCase){
+    combine = combine.concat(numberArr, characterArr, upperCaseArr);
+  }
+
+  else if (upperCase, lowerCase, character){
+    combine = combine.concat(upperCaseArr, lowerCaseArr, characterArr);
+  }
+
+  else if (upperCase && lowerCase){
+    combine = combine.concat(upperCaseArr, lowerCaseArr);
+  }
+
+  else if (number && character){
+    combine = combine.concat(numberArr, characterArr);
+  }
+
+  else if (number && upperCase){
+    combine = combine.concat(numberArr, upperCaseArr);
+  }
+
+  else if (number && lowerCase){
+    combine = combine.concat(numberArr, lowerCaseArr);
+  }
+
+  else if (character && upperCase){
+    combine = combine.concat(characterArr, upperCaseArr);
+  }
+
+  else if (character && lowerCase){
+    combine = combine.concat(characterArr, lowerCaseArr);
+    password += combine;
+  }
+
+  else if (character){
+    combine = combine.concat(characterArr);
+    password += combine;
+  }
+
+  else if (number){
+    combine = combine.concat(numberArr);
+    password += combine;
+  }
+
+  else if (upperCase){
+    combine = combine.concat(upperCaseArr);
+    password += combine;
+  }
+
+  else if (lowerCase){
+    combine = combine.concat(lowerCaseArr);
+    password += combine;
+  }
   
   //2. Validate the input. 
   //3. Generate password based on criteria.
@@ -69,8 +134,12 @@ function generatePassword() {
 
   //4. Display the password on the page.
 
-  return "Generated password will go here";
+  return password;
+
+
 }
+
+
 
 // Write password to the #password input
 function writePassword() {
@@ -84,12 +153,22 @@ function writePassword() {
 
 
 
-for (var i = 0; i < enter; i++){
-console.log (number[(Math.floor(Math.random() * number.length))]);
-console.log(lowerCase[(Math.floor(Math.random() * lowerCase.length))]);
-console.log(upperCase[(Math.floor(Math.random() * upperCase.length))]);
-console.log(character[(Math.floor(Math.random() * number.length))]);
-}
+
+
+
+
+
+// var ps = password.join("");{
+//   UserInput(ps);
+// }
+
+// function UserInput(ps){
+//   document.querySelector("#password").textContent = ps;
+  
+// }
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
