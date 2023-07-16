@@ -69,38 +69,47 @@ var enter = parseInt(prompt("How many characters would you like your password? C
 
   else if (number && upperCase && lowerCase){
     combine = combine.concat(numberArr, lowerCaseArr + upperCaseArr);
+    password += combine;
   }
 
   else if (number && character && lowerCase){
     combine = combine.concat(numberArr, characterArr, lowerCaseArr);
+    password += combine;
   }
 
   else if (number && character && upperCase){
     combine = combine.concat(numberArr, characterArr, upperCaseArr);
+    password += combine;
   }
 
   else if (upperCase, lowerCase, character){
     combine = combine.concat(upperCaseArr, lowerCaseArr, characterArr);
+    password += combine;
   }
 
   else if (upperCase && lowerCase){
     combine = combine.concat(upperCaseArr, lowerCaseArr);
+    password += combine;
   }
 
   else if (number && character){
     combine = combine.concat(numberArr, characterArr);
+    password += combine;
   }
 
   else if (number && upperCase){
     combine = combine.concat(numberArr, upperCaseArr);
+    password += combine;
   }
 
   else if (number && lowerCase){
     combine = combine.concat(numberArr, lowerCaseArr);
+    password += combine;
   }
 
   else if (character && upperCase){
     combine = combine.concat(characterArr, upperCaseArr);
+    password += combine;
   }
 
   else if (character && lowerCase){
@@ -149,11 +158,6 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
-
-
-
-
 
 
 
