@@ -8,16 +8,16 @@ var lowerCase;
 var character;
 //  b. Lowercase, uppercase, special characters, numbers
 
-var number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+var numberArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-var character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+var characterArr = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 
-var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var lowerCaseArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-var upperCase= ["A", "B", "C", "D", "E", "F", "G", "H"];
+var upperCaseArr= ["A", "B", "C", "D", "E", "F", "G", "H"];
 
 //combine to be used to concate 
-var combine;
+var combine= [];
 
 //Booleans ????
 // var number= true;
@@ -51,15 +51,15 @@ function generatePassword() {
   };
 
   if (!number && !upperCase && !lowerCase && !character) {
-    combine = alert("You must choose a criteria!");
+     alert("You must choose a criteria!");
   }
 
   else if (number && upperCase && lowerCase && character) {
-    combine = number.concat(character, lowerCase, upperCase);
+    combine = combine.concat(numberArr, characterArr, lowerCaseArr, upperCaseArr);
   }
 
   else if (number && upperCase && lowerCase){
-    combine = number.concat(lowerCase + upperCase);
+    combine = combine.concat(lowerCase + upperCase);
   }
 
   
