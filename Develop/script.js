@@ -55,11 +55,11 @@ function generatePassword() {
   }
 
   else if (number && upperCase && lowerCase && character) {
-    combine = number(character, lowerCase, upperCase);
+    combine = number.concat(character, lowerCase, upperCase);
   }
 
   else if (number && upperCase && lowerCase){
-    combine = number(lowerCase + upperCase);
+    combine = number.concat(lowerCase + upperCase);
   }
 
   
