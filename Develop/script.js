@@ -6,7 +6,7 @@ function generatePassword() {
 
 var password = "";
 
-var numberArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+var numberArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 var characterArr = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 
@@ -43,7 +43,7 @@ var combine= [];
 
 
 if(length < 8 || length > 128) {
-  alert("The length of your password must be between 8 and 128 chracters. Please try again.");
+  alert("The length of your password must be between 8 and 128 characters. Please try again.");
 
 }
 
@@ -65,7 +65,7 @@ if(length < 8 || length > 128) {
     console.log(lowerCaseArr[(Math.floor(Math.random() * lowerCaseArr.length))]);
     console.log(upperCaseArr[(Math.floor(Math.random() * upperCaseArr.length))]);
     console.log(characterArr[(Math.floor(Math.random() * characterArr.length))]);
-    // password.push(combine);
+    
   
 
   if (!number && !upperCase && !lowerCase && !character) {
@@ -160,7 +160,6 @@ if(length < 8 || length > 128) {
   for (var i = 0; i < length; i ++) {
       result += combine[Math.floor(Math.random() * combine.length)];
       
-
   }
 
   return result;
