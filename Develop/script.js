@@ -39,11 +39,11 @@ var combine= [];
   //   alert ("Please enter a value");
   // } 
 
-  var length = prompt("How many characters would you like your password to contain?");
+  var length = prompt("How many characters would you like your password? Choose between 8 and 128.");
 
 
 if(length < 8 || length > 128) {
-  alert("The length of your password must be between 8 and 128 chracters. Please try again");
+  alert("The length of your password must be between 8 and 128 chracters. Please try again.");
 
 }
 
@@ -156,7 +156,14 @@ if(length < 8 || length > 128) {
 
   //4. Display the password on the page.
 
-  return password;
+  var result ="" // this will be our final password
+  for (var i = 0; i < length; i ++) {
+      result += combine[Math.floor(Math.random() * combine.length)];
+      
+
+  }
+
+  return result;
 
 
 }
