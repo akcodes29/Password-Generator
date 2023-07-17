@@ -31,14 +31,26 @@ var combine= [];
   //1. Prompt the user for the password criteria.
   //  a. Password length 8 < 128
 
-var enter = parseInt(prompt("How many characters would you like your password? Choose between 8 and 128."));
+  
 
-  if (!enter) {
-    alert ("Please enter a value");
-  } 
-  else if (enter < 8 || enter > 128) {
-    enter = parseInt(prompt("You must choose a number between 8 and 128"));
-  }
+// var enter = parseInt(prompt("How many characters would you like your password? Choose between 8 and 128."));
+
+  // if (!enter) {
+  //   alert ("Please enter a value");
+  // } 
+
+  var length = prompt("How many characters would you like your password to contain?");
+
+
+if(length < 8 || length > 128) {
+  alert("The length of your password must be between 8 and 128 chracters. Please try again");
+
+}
+
+
+  // else if (enter < 8 || enter > 128) {
+  //   enter = parseInt(prompt("You must choose a number between 8 and 128"));
+  // }
 
   else {
   var number = confirm ("Click OK to include numbers.");
@@ -47,24 +59,25 @@ var enter = parseInt(prompt("How many characters would you like your password? C
   var character= confirm("Click OK to include special characters.");
   }
 
-  if (number == true) {
-  for (var i = 0; i < enter; i++) 
+  
+  for (var i = 0; i < length; i++) 
     console.log(numberArr[(Math.floor(Math.random() * numberArr.length))]);
     console.log(lowerCaseArr[(Math.floor(Math.random() * lowerCaseArr.length))]);
     console.log(upperCaseArr[(Math.floor(Math.random() * upperCaseArr.length))]);
     console.log(characterArr[(Math.floor(Math.random() * characterArr.length))]);
     // password.push(combine);
-  }
+  
 
   if (!number && !upperCase && !lowerCase && !character) {
      alert("You must choose a criteria!");
   }
 
   else if (number && upperCase && lowerCase && character) {
-    for (var i = 0; i < length; i++){
+    // for (var i = 0; i < length; i++){
     combine = combine.concat(numberArr, characterArr, lowerCaseArr, upperCaseArr);
-    var com2 = Math.floor(Math.random() * combine.length);
-    password += com2.toString();}
+    // var com2 = Math.floor(Math.random() * combine.length);
+    // password += com2.toString();}
+    password += combine;
   }
 
   else if (number && upperCase && lowerCase){
