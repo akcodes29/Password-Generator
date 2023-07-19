@@ -38,6 +38,8 @@ I also recieved inital starter code for HTML, CSS, and JS from UCF Bootcamp curr
 
 N/A
 
-## Deployed Sit
+## Deployed Site
 
 ## Screenshot
+
+![Screenshot of Homework 3](image.png)
