@@ -48,7 +48,7 @@ function generatePassword() {
   console.log(upperCaseArr[(Math.floor(Math.random() * upperCaseArr.length))]);
   console.log(characterArr[(Math.floor(Math.random() * characterArr.length))]);
 
-//Possible outcomes
+//Possible outcomes; recieved help from tutor with refractor
 
   if (number) {
     combine = combine.concat(numberArr);
