@@ -66,7 +66,7 @@ function generatePassword() {
     combine = combine.concat(characterArr);
   }
 
-  //Refractored the below code for what is seen above
+  //Refractored the below code (outcomes) for what is seen above ^
 
   // if (!number && !upperCase && !lowerCase && !character) {
   //    alert("You must choose a criteria!");
@@ -154,6 +154,7 @@ function generatePassword() {
   //3. Generate password based on criteria.
   //4. Display the password on the page.
 
+
   var result = "" // this will be our final password
   for (var i = 0; i < length; i++) {
     result += combine[Math.floor(Math.random() * combine.length)];
@@ -172,6 +173,7 @@ function writePassword() {
   passwordText.value = password;
 
 }
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
