@@ -40,6 +40,8 @@ N/A
 
 ## Deployed Site
 
+https://akcodes29.github.io/Password-Generator/
+
 ## Screenshot
 
 ![Screenshot of Homework 3](image.png)
